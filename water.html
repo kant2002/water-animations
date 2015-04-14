@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Water grow.</title>
+    <style>
+        .canal {
+            background: grey;
+            width: 700px;
+            height: 250px;
+            position: relative;
+        }
+        
+        .over1, .over2 {
+            background: white;
+            width: 150px;
+            height: 300px;
+            position: absolute;
+        }
+        
+        .over1 {
+            top: 10px;
+            left: -69px;
+            transform: rotateZ(-30deg);
+        }
+        
+        .over2 {
+            top: 10px;
+            right: -69px;
+            transform: rotateZ(30deg);
+        }
+        
+        .water {
+            position: absolute;
+            height: 250px;
+            bottom: 0;
+            width: 700px;
+            background-color: blue;
+            
+            -webkit-animation: watergrow 4s cubic-bezier(.99,1.5,0,-1.31) 0s infinite alternate;
+            animation: watergrow 4s cubic-bezier(.99,1.5,0,-1.31) 0s infinite alternate;
+            
+            -webkit-animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
+            animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        }
+        
+        @keyframes watergrow {
+            0% {
+                height: 0px;
+            }
+            100% {
+                height: 250px;
+            }
+        }
+        
+        @-webkit-keyframes watergrow {
+            0% {
+                height: 0px;
+            }
+            100% {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="canal">
+        <div class="water"></div>
+
+        <div class="over1"></div>
+        <div class="over2"></div>
+    </div>
+</body>
+</html>
